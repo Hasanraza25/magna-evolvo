@@ -1,4 +1,3 @@
-/*** Variables & Mixins ***/
 /*** General Css ***/
 body {
   font-family: "Poppins", sans-serif;
@@ -706,6 +705,7 @@ header {
   padding-right: 55px;
 }
 
+/* HEADER SECTION STYLE */
 .headSidePad {
   padding-left: 35px;
   padding-right: 35px;
@@ -1034,12 +1034,52 @@ header {
   color: #2c2c2c;
 }
 
+.modal-img1 {
+  background-image: url(/assets/images/bg-popup.jpg);
+}
+
+.modal-row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media (max-width: 991px) {
+  .modal-img1 {
+    /* width: 92%; */
+    margin: 0 auto;
+  }
+}
+
+/* SERVICES SECTION STYLE */
+
+/* Container styling */
+.service-img-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  margin-bottom: 20%;
+  box-sizing: border-box;
+}
+
+/* Image styling */
+.service-img-container img {
+  width: 100%; /* Image adapts to the container */
+  height: auto;
+  max-width: 500px;
+}
+
+.service-row{
+  margin-top: 100px;
+}
+
 .mainHead {
   font-size: 6vh;
   font-weight: 600;
   line-height: 1.1;
   padding-bottom: 25px;
   position: relative;
+  margin-top: -100px;
 }
 .mainHead:before {
   content: "";
@@ -1086,14 +1126,23 @@ header {
 }
 
 #services {
-  /*background-image: url("../images/services.png");*/
   background-repeat: no-repeat;
   background-position: 0px 20%;
+  position: relative; /* Set a relative position so we can position the image inside */
+  overflow: hidden; /* Ensures the image doesn't overflow the section */
 }
 #services .serviceHead {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 150px;
+}
+
+/* For small screens (tablets and below) */
+@media (max-width: 768px) {
+  .image-container img {
+    max-width: 80%; /* Adjust this value for smaller screens */
+  }
 }
 #services .serviceSlider {
   padding: 10px;
@@ -1106,39 +1155,6 @@ header {
 }
 #services .serviceSlider .serviceBox a:hover .icon.icon1:before {
   background-position: -108px -13px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon2:before {
-  background-position: -110px -267px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon3:before {
-  background-position: -110px -355px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon4:before {
-  background-position: -109px -96px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon5:before {
-  background-position: -110px -181px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon6:before {
-  background-position: -108px -445px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon7:before {
-  background-position: -108px -521px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon8:before {
-  background-position: -112px -607px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon9:before {
-  background-position: -108px -684px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon10:before {
-  background-position: -108px -773px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon11:before {
-  background-position: -108px -858px;
-}
-#services .serviceSlider .serviceBox a:hover .icon.icon12:before {
-  background-position: -108px -937px;
 }
 #services .sliderArrows {
   bottom: 0;
@@ -2321,6 +2337,7 @@ footer .copyright a:hover {
   padding-bottom: 0;
   padding-left: 90px;
   font-size: 70px;
+  margin-top: 2rem;
 }
 .portHead .mainHead span {
   font-size: 50px;
@@ -3212,7 +3229,6 @@ footer .copyright a:hover {
 
 .icon.icon1 img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -3234,8 +3250,8 @@ footer .copyright a:hover {
   font-weight: 800;
   text-transform: uppercase;
   color: #000;
-  padding-top: 12px;
-  margin-top: 12px;
+  padding-top: 30px;
+  margin-top: 30px;
   margin-bottom: 10px;
   position: relative;
 }
@@ -6392,6 +6408,12 @@ footer .copyright a:hover {
   }
 }
 @media (max-width: 767px) {
+  .upperBanner{
+    background-image: url('/assets/images/banner.jpg');
+  }
+  .service-row{
+    margin-top: 0;
+  }
   .mountainNum {
     flex-wrap: wrap;
     margin: 0 -15px;
@@ -8376,12 +8398,7 @@ ul.app-aslider-list li:before {
     margin-bottom: 33px;
   }
 
-  .videobanner
-    .desktop_view
-    .feat
-    .feature-list
-    .featured_item
-    .featured_img {
+  .videobanner .desktop_view .feat .feature-list .featured_item .featured_img {
     display: flex;
     justify-content: center;
   }
